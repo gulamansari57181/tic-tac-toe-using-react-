@@ -96,10 +96,10 @@ const App = () => {
         <Col md={6} className="offset-md-3">
           {winMessage ? (
             <div className="mb-2 mt-2">
-              <h1 className="text-success text-uppercase text-center">
+              <h1 className="text-warning text-uppercase text-center">
                 {winMessage}
               </h1>
-              <Button color="success" block onClick={reloadGame}>
+              <Button color="warning" block onClick={reloadGame}>
                 Reload the game
               </Button>
             </div>
