@@ -82,6 +82,7 @@ const App = () => {
     );
   }
 
+  function play() {}
   const changeItem = (itemNumber) => {
     if (winMessage) {
       return toast(winMessage, { type: "success" });
@@ -111,13 +112,10 @@ const App = () => {
         <Col md={6} className="offset-md-3">
           {" "}
           {winMessage ? (
-            <div className="mb-2 mt-2">
-              <h1 className="text-warning text-uppercase text-center">
-                {" "}
-                {winMessage}{" "}
-              </h1>{" "}
+            <div className="mb-2 mt-2" id="winMsg">
+              <h1 className=" text-uppercase text-center"> {winMessage} </h1>{" "}
               <Button className="relode-btn" block onClick={reloadGame}>
-                Reload the game{" "}
+                <h3> Reload the game </h3>
               </Button>{" "}
             </div>
           ) : (
@@ -129,7 +127,13 @@ const App = () => {
           <div className="grid">
             {" "}
             {itemArray.map((item, index) => (
-              <Card color="warning" onClick={() => changeItem(index)}>
+              <Card
+                color="warning"
+                onClick={() => {
+                  changeItem(index);
+                  play();
+                }}
+              >
                 <CardBody className="box">
                   <Icon name={item} />{" "}
                 </CardBody>{" "}
